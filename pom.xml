@@ -17,16 +17,59 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
-
-    <name>KSQL UDF :: Quickstart</name>
-    
     <groupId>com.mitchseymour</groupId>
     <artifactId>ksql-udf-quickstart</artifactId>
-    <packaging>maven-archetype</packaging>
     <version>0.1.0-SNAPSHOT</version>
+    <packaging>maven-archetype</packaging>
+    <name>KSQL UDF :: Quickstart</name>
+    <url>https://github.com/mitch-seymour/ksql-archetypes</url>
+    <description>
+        An archetype for building KSQL UDFs and UDAFs
+    </description>
+
+    <licenses>
+        <license>
+            <name>Apache License 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <inceptionYear>2018</inceptionYear>
+
+    <scm>
+        <connection>scm:git:https://github.com/mitch-seymour/ksql-archetypes.git</connection>
+        <developerConnection>scm:git:https://github.com/mitch-seymour/ksql-archetypes.git</developerConnection>
+        <url>https://github.com/mitch-seymour/ksql-archetypes</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <developers>
+        <developer>
+            <name>Mitch Seymour</name>
+            <email>mitchseymour@gmail.com</email>
+            <timezone>America/New_York</timezone>
+            <url>https://mitchseymour.com/</url>
+        </developer>
+    </developers>
+
+    <properties>
+        <!-- Java 8 source / targets -->
+        <maven.compiler.release>8</maven.compiler.release>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <build>
         <extensions>
@@ -85,7 +128,6 @@
                     </delimiters>
                 </configuration>
             </plugin>
-            <!--
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
@@ -104,7 +146,6 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
         </plugins>
         <resources>
             <resource>
@@ -112,6 +153,5 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
-    </build> 
-    
+    </build>
 </project>
