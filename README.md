@@ -2,8 +2,7 @@
 Maven archetypes of KSQL UDFs / UDAFs
 
 # To Do
-- Add UDF / UDAF examples
-- Publish to Maven central
+- Expand UDF / UDAF examples
 
 # Install Locally
 Install to local maven repo.
