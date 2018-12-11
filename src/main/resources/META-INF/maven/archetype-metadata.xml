@@ -21,15 +21,6 @@
         xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
         name="ksql-udf-quickstart-java">
     
-    <requiredProperties>
-        <requiredProperty key="udfName">
-            <defaultValue>my_udf</defaultValue>
-        </requiredProperty>
-        <requiredProperty key="udfDescription">
-            <defaultValue>this udf does something cool</defaultValue>
-        </requiredProperty>
-    </requiredProperties>
-
     <fileSets>
         <fileSet filtered="true" packaged="true" encoding="UTF-8">
             <directory>src/main/java</directory>
