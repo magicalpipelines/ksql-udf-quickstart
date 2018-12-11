@@ -29,9 +29,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <ksql.version>5.0.0</ksql.version>
-        <slf4j.version>1.7.7</slf4j.version>
-        <log4j.version>1.2.17</log4j.version>
+        <ksql.version>5.0.1</ksql.version>
     </properties>
 
     <repositories>
@@ -47,7 +45,7 @@
     </repositories>
 
     <!--
-		Execute "mvn clean package -Pbuild-jar"
+		Execute "mvn clean package"
 		to build a jar file out of this project!
 	-->
 
@@ -66,9 +64,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.2.1</version>
-                <configuration>
-                    <!-- put your configurations here -->
-                </configuration>
                 <executions>
                     <execution>
                         <phase>package</phase>
