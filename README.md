@@ -1,14 +1,52 @@
 # ksql-archetypes
-Maven archetypes of KSQL UDFs / UDAFs
+This project includes a Maven archetype that can be used for quickly bootstrapping custom KSQL UDFs and UDAFs. Generating
+a project from this archetype will produce a couple of example functions (a UDF named `REVERSE` and a UDAF named 
+`SUMMARY_STATS`) that are ready to be deployed to your KSQL server. Feel free to use these examples as a starting point
+for your own custom KSQL functions.
 
-# Install Locally
+## Note
+This work has been contributed to the official [KSQL project](https://github.com/confluentinc/ksql/pull/2272) and is
+awaiting review. I may archive this repository when the related PR gets merged, which means these artifacts will be made available
+under a different group ID (likely `io.confluent.ksql`).
+
+# Usage
+First, run the following command to generate a new project from this archetype.
+
+```bash
+$ mvn archetype:generate -X \
+    -DarchetypeGroupId=com.mitchseymour \
+    -DarchetypeArtifactId=ksql-udf-quickstart \
+    -DarchetypeVersion=0.1.1 \
+    -DgroupId=com.mitchseymour.ksql.functions \
+    -DartifactId=my-udf \
+    -Dversion=0.1.0-SNAPSHOT
+```
+
+This will copy an example UDF and UDAF into the `my-udf` directory. Feel free to use these examples to build your own KSQL functions. Once you're ready to deploy your custom functions to a KSQL server, run the following command to build an uber JAR.
+
+```bash
+$ mvn clean package
+```
+
+Now, all you need to do it copy the JAR to the KSQL ext directory (run `SHOW PROPERTIES` from the KSQL CLI and look for `ksql.extension.dir` if you are unsure where this directory is).
+
+```bash
+$ cp target/my-udf-0.1.0-SNAPSHOT.jar /tmp/ext/
+```
+
+Finally, run `SHOW FUNCTIONS` from the CLI and you should see your new UDF / UDAF in the list :)
+
+
+# Development workflows
+## Install Locally
 Install to local maven repo.
 
 ```bash
+$ export GPG_TTY=$(tty)
 $ mvn install
 ```
 
-# Deploy to Maven Central
+## Deploy to Maven Central
 First, ensure the sonatype credentials are added to `$HOME/.m2/settings.xml`.
 
 ```bash
@@ -40,30 +78,3 @@ $ mvn deploy
 Releases will be uploaded to [Maven Central](https://oss.sonatype.org/content/repositories/staging/com/mitchseymour/ksql-udf-quickstart/).
 
 __Note:__ if you are deploying a non-SNAPSHOT version, you'll need to visit [the staging repository](https://oss.sonatype.org/#stagingRepositories), find the newly uploaded artifact at the bottom of the list, and select `Close` and then `Release`.
-
-# Usage
-First, run the following command to generate a new project from this archetype.
-
-```bash
-$ mvn archetype:generate -X \
-    -DarchetypeGroupId=com.mitchseymour \
-    -DarchetypeArtifactId=ksql-udf-quickstart \
-    -DarchetypeVersion=0.1.1 \
-    -DgroupId=com.mitchseymour.ksql.functions \
-    -DartifactId=my-udf \
-    -Dversion=0.1.0-SNAPSHOT
-```
-
-This will copy an example UDF and UDAF into the `my-udf` directory. Feel free to use these examples to build your own KSQL functions. Once you're ready to deploy your custom functions to a KSQL server, run the following command to build an uber JAR.
-
-```bash
-$ mvn clean package
-```
-
-Now, all you need to do it copy the JAR to the KSQL ext directory (run `SHOW PROPERTIES` from the KSQL CLI and look for `ksql.extension.dir` if you are unsure where this directory is).
-
-```bash
-$ cp target/my-udf-0.1.0-SNAPSHOT.jar /tmp/ext/
-```
-
-Finally, run `SHOW FUNCTIONS` from the CLI and you should see your new UDF / UDAF in the list :)
