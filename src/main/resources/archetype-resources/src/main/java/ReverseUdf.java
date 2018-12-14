@@ -1,4 +1,4 @@
-package com.mitchseymour.ksql.udfs;
+package ${package};
 
 import io.confluent.ksql.function.udf.Udf;
 import io.confluent.ksql.function.udf.UdfDescription;
