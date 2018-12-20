@@ -36,6 +36,14 @@ $ cp target/my-udf-0.1.0-SNAPSHOT.jar /tmp/ext/
 
 Finally, run `SHOW FUNCTIONS` from the CLI and you should see your new UDF / UDAF in the list :)
 
+__Note:__ if you'd like to convert the generated project to a Gradle project, run the following command.
+
+```bash
+# (optional) convert the generated project to a Gradle project if that is your 
+# preferred build system
+$ gradle init --type pom
+```
+
 
 # Development workflows
 ## Install Locally
