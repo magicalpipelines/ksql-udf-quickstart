@@ -16,7 +16,7 @@ First, run the following command to generate a new project from this archetype.
 $ mvn archetype:generate -X \
     -DarchetypeGroupId=com.mitchseymour \
     -DarchetypeArtifactId=ksql-udf-quickstart \
-    -DarchetypeVersion=0.1.1 \
+    -DarchetypeVersion=0.1.2 \
     -DgroupId=com.mitchseymour.ksql.functions \
     -DartifactId=my-udf \
     -Dversion=0.1.0-SNAPSHOT
