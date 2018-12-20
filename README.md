@@ -1,3 +1,5 @@
+[![Maven Central](https://img.shields.io/maven-central/v/com.mitchseymour/ksql-udf-quickstart.svg?label=Maven%20Central)](https://search.maven.org/search?q=g:%22com.mitchseymour%22%20AND%20a:%22ksql-udf-quickstart%22)
+
 # Overview
 This project includes a Maven archetype that can be used for quickly bootstrapping custom KSQL UDFs and UDAFs. Generating
 a project from this archetype will produce a couple of example functions (a UDF named `REVERSE` and a UDAF named 
