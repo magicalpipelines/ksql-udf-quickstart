@@ -19,7 +19,7 @@
 
     <groupId>com.mitchseymour</groupId>
     <artifactId>ksql-udf-quickstart</artifactId>
-    <version>0.1.2</version>
+    <version>0.2.0-SNAPSHOT</version>
     <packaging>maven-archetype</packaging>
     <name>KSQL UDF :: Quickstart</name>
     <url>https://github.com/mitch-seymour/ksql-archetypes</url>
