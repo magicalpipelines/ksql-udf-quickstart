@@ -76,5 +76,3 @@ $ mvn deploy
 ```
 
 Releases will be uploaded to [Maven Central](https://oss.sonatype.org/content/repositories/staging/com/mitchseymour/ksql-udf-quickstart/).
-
-__Note:__ if you are deploying a non-SNAPSHOT version, you'll need to visit [the staging repository](https://oss.sonatype.org/#stagingRepositories), find the newly uploaded artifact at the bottom of the list, and select `Close` and then `Release`.
