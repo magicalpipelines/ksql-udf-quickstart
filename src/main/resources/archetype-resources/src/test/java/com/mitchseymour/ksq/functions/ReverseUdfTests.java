@@ -7,12 +7,12 @@ import org.junit.jupiter.api.Test;
 
 class ReverseUdfTests {
 
-	@Test
-	@DisplayName("REVERSE(hello) = olleh")
-	void reverseString() {
-		ReverseUdf udf = new ReverseUdf();
+    @Test
+    @DisplayName("REVERSE(hello) = olleh")
+    void reverseString() {
+        ReverseUdf udf = new ReverseUdf();
         assertEquals("olleh", udf.reverseString("hello"), "Reversed string 'hello' should equal 'olleh'");
-	}
+    }
 
     @Test
     @DisplayName("REVERSE(27425) = 52472")
